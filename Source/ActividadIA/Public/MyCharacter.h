@@ -9,24 +9,29 @@
 UCLASS()
 class ACTIVIDADIA_API AMyCharacter : public ACharacter
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
-	AMyCharacter();
+    // Sets default values for this character's properties
+    AMyCharacter();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+    // Called when the game starts or when spawned
+    virtual void BeginPlay() override;
 
-	void MoveForward(float value);
-	void MoveRight(float value);
+    void MoveForward(float value);
+    void MoveRight(float value);
+
+    // Saltar
+    virtual void Jump() override;
+
+    virtual void StopJumping() override;
 
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+    // Called every frame
+    virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    // Called to bind functionality to input
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 };
